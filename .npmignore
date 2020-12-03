@@ -1,0 +1,10 @@
+src
+test
+node_modules
+dist
+.env
+.env.example
+nodemon.json
+tsconfig.json
+webpack.config.js
+.eslintrc.json

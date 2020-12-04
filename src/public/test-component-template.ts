@@ -1,7 +1,7 @@
 const mainTemplate = /* html */ `
 
 <div>
-  <p>migdrp-logo from Migdrp Framework</p>
+  <p>migdrp-logo from Migdrp Components</p>
   <migdrp-logo text-size='28px' dark-color='#000000'></migdrp-logo>
 </div>
 

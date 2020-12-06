@@ -1,3 +1,3 @@
-import { MigdrpLogo } from '../component/migdrp-logo';
+import { MigdrpLogo } from './migdrp-logo';
 
 export { MigdrpLogo };

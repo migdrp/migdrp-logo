@@ -95,7 +95,7 @@ export class MigdrpIcon extends HTMLElement {
     [0.19607, 0.57647, 0.09803],
   ];
 
-  public constructor() {
+  constructor() {
     super();
     this.renderTemplate();
 
@@ -109,7 +109,7 @@ export class MigdrpIcon extends HTMLElement {
 
     this.loop();
 
-    this.ResizeCanvas(this.renderer, this.camera);
+    this.ResizeCanvas(this.renderer, this.camera)();
 
     //console.log("Migicon started")
   }

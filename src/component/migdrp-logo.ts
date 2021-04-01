@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { MigdrpIcon } from './migdrp-icon';
-import { MigdrpElement } from 'migdrp-framework/lib';
 
 export class MigdrpLogo extends HTMLElement {
   static get observedAttributes(): string[] {

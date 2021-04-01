@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/migdrp/migdrp-logo/compare/v1.1.2...v1.1.3) (2021-04-01)
+
+
+### Bug Fixes
+
+* **npm audits:** npm audits ([ca797c8](https://github.com/migdrp/migdrp-logo/commit/ca797c8ac537db1c0ae46b4a962ddc0ab5051173))
+
 ### [1.1.2](https://github.com/migdrp/migdrp-logo/compare/v1.1.1...v1.1.2) (2020-12-06)
 
 

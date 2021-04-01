@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/migdrp/migdrp-logo/compare/v1.1.3...v1.1.4) (2021-04-01)
+
+
+### Bug Fixes
+
+* **added resize on startup:** added resize on startup ([cc62a2d](https://github.com/migdrp/migdrp-logo/commit/cc62a2d099094399414e35a6dbb42b21bfab26b8))
+
 ### [1.1.3](https://github.com/migdrp/migdrp-logo/compare/v1.1.2...v1.1.3) (2021-04-01)
 
 

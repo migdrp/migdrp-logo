@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/migdrp/migdrp-logo/compare/v1.1.4...v1.1.5) (2021-04-01)
+
+
+### Bug Fixes
+
+* **build:** build ([fab6124](https://github.com/migdrp/migdrp-logo/commit/fab6124e8d413c6c61f5e78dabca79878a8aa92d))
+
 ### [1.1.4](https://github.com/migdrp/migdrp-logo/compare/v1.1.3...v1.1.4) (2021-04-01)
 
 

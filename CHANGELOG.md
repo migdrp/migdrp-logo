@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/migdrp/migdrp-logo/compare/v1.1.6...v1.2.0) (2021-04-01)
+
+
+### Features
+
+* **added polymer for testing:** added polymer for testing ([c513212](https://github.com/migdrp/migdrp-logo/commit/c513212dac36efd2fcdb2fee33caa18b542328f4))
+
 ### [1.1.6](https://github.com/migdrp/migdrp-logo/compare/v1.1.5...v1.1.6) (2021-04-01)
 
 

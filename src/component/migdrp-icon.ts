@@ -108,6 +108,8 @@ export class MigdrpIcon extends HTMLElement {
 
     this.loop();
 
+    this.ResizeCanvas(this.renderer, this.camera);
+
     //console.log("Migicon started")
   }
 

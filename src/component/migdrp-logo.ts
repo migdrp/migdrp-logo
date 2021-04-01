@@ -49,7 +49,7 @@ export class MigdrpLogo extends HTMLElement {
           if (/^#[0-9A-F]{6}$/i.test(newValue)) {
             this.darkColor = newValue;
             if (this.migdrpIcon) {
-              console.log('Already loaded changing back color..');
+              //console.log('Already loaded changing back color..');
               this.migdrpIcon.setAttribute('style', `--migdrp-icon-circle-color:${this.darkColor};`);
               this.migdrpText.style.color = this.darkColor;
               this.setAttribute('style', `--migdrp-logo-loader-darkcolor:${this.darkColor};`);
@@ -374,7 +374,7 @@ export class MigdrpLogo extends HTMLElement {
       this.migdrpIcon.setAttribute('style', `--migdrp-icon-circle-color:${color};`);
       //this.loadedResolutions[0].resolve(true);
     } else {
-      console.log('Using the default migdrp logo: ', this.customUri);
+      //console.log('Using the default migdrp logo: ', this.customUri);
 
       import(/* webpackChunkName:"threejs" , webpackPrefetch:true */ './migdrp-icon').then(() => {
         setTimeout(() => {

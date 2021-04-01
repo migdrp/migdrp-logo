@@ -98,6 +98,7 @@ export class MigdrpIcon extends HTMLElement {
   public constructor() {
     super();
     this.renderTemplate();
+
     this.addEventListeners();
 
     this.common();

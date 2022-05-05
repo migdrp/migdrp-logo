@@ -1,5 +1,5 @@
 
-declare namespace MigdrpLogo {
+
   export interface Point {
     x: number;
     y: number;
@@ -17,6 +17,5 @@ declare namespace MigdrpLogo {
   }
 
   
-}
 
 

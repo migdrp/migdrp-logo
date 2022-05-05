@@ -1,47 +1,29 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import { customElement } from '@polymer/decorators';
+
 import '../lib';
+import { css, getStyles } from './test-component-style';
+import { getMainTemplate } from './test-component-template';
 
-@customElement('test-component')
-export class TestComponent extends PolymerElement {
-  static get template(): HTMLTemplateElement {
-    return html`
-      <style>
-        :host {
-          width: 100%;
-          height: 50vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+export class TestComponent extends HTMLElement {
 
-        p {
-          color: black;
-        }
+  public template = getMainTemplate();
+  private styleElement: HTMLStyleElement;
 
-        div {
-          align-self: center;
-          justify-self: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        migdrp-logo {
-          width: 150px;
-          height: 150px;
-        }
-      </style>
-      <div>
-        <p>migdrp-logo from Migdrp Components</p>
-        <migdrp-logo text-size="28px" dark-color="#000000"></migdrp-logo>
-      </div>
-    `;
+  public connectedCallback(): void {
+    this.renderElements();
   }
+  
+  public constructor() {
+    super();
 
-  ready(): void {
-    super.ready();
+    this.styleElement = getStyles(css as string);
+    this.attachShadow({ mode: 'open' });
+    (this.shadowRoot as ShadowRoot).append(this.styleElement);
+  }
+  
+  public renderElements(): void {
+    this.shadowRoot.append(this.template as any);
   }
 }
+
+
+customElements.define('test-component', TestComponent);

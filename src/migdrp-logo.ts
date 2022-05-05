@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
+
+
 import { MigdrpIcon } from './migdrp-icon';
 
 export class MigdrpLogo extends HTMLElement {
@@ -317,6 +318,7 @@ export class MigdrpLogo extends HTMLElement {
     });
   }
 
+  
   private loader: HTMLDivElement = window.document.createElement('div');
   private iconContainer: HTMLDivElement = window.document.createElement('div');
   private migdrpText: HTMLParagraphElement = window.document.createElement('div');
@@ -405,4 +407,4 @@ export class MigdrpLogo extends HTMLElement {
   }
 }
 
-window.customElements.define('migdrp-logo', MigdrpLogo);
+customElements.define('migdrp-logo', MigdrpLogo);

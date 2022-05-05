@@ -1,5 +1,9 @@
 
 
+import { Fractals, Point } from "./types/types";
+
+
+
 /** The Migdrp Fractal class */
 export class MigdrpFractal {
   private fractals = {
@@ -33,9 +37,9 @@ export class MigdrpFractal {
     },
   };
 
-  public levelReductionPoints: Array<Array<MigdrpLogo.Point>> = [];
-  public levelExpansionPoints: Array<Array<MigdrpLogo.Point>> = [];
-  public levelPathPoints: Array<Array<MigdrpLogo.Point>> = [];
+  public levelReductionPoints: Array<Array<Point>> = [];
+  public levelExpansionPoints: Array<Array<Point>> = [];
+  public levelPathPoints: Array<Array<Point>> = [];
 
   private levelString: Array<string> = [];
   private levelLenghts: number[] = [];
@@ -46,7 +50,7 @@ export class MigdrpFractal {
   private angle: number;
 
   /** Creates a new Migdrp Fractal */
-  public constructor(maxLevel: number, segmentLenght: number, fractal: MigdrpLogo.Fractals) {
+  public constructor(maxLevel: number, segmentLenght: number, fractal: Fractals) {
     this.maxLevel = maxLevel;
     this.segmentLenght = segmentLenght;
     this.angle = this.fractals[fractal].angle;
@@ -84,7 +88,7 @@ export class MigdrpFractal {
     }
   }
 
-  private generateFractalStrings(fractal: MigdrpLogo.Fractals) {
+  private generateFractalStrings(fractal: Fractals) {
     const axiom: string = this.fractals[fractal].axiom;
 
     let currentString: string = axiom;
@@ -110,12 +114,12 @@ export class MigdrpFractal {
   }
 
   private generatePathPoints(fractalString: string, level: number) {
-    const points: MigdrpLogo.Point[] = [];
+    const points: Point[] = [];
     let currentAngle: number = this.levelAngles[level] - this.levelAngles[4];
     const segmentLenght: number = this.levelLenghts[level];
 
     //console.log(`Segment lenght ${segmentLenght} for level ${level} with angle ${currentAngle}`);
-    let lastPoint: MigdrpLogo.Point = { x: 15.799027262255214, y: -0.5989504671700984 };
+    let lastPoint: Point = { x: 15.799027262255214, y: -0.5989504671700984 };
     const fractal = fractalString;
 
     //console.log("fractal: ",fractal);
@@ -143,12 +147,12 @@ export class MigdrpFractal {
   }
 
   private generateReductionPoints(fractalString: string, level: number) {
-    const points: MigdrpLogo.Point[] = [];
+    const points: Point[] = [];
     let currentAngle: number = this.levelAngles[level] - this.levelAngles[4];
     const segmentLenght: number = this.levelLenghts[level];
 
     //console.log(`Segment lenght ${segmentLenght} for level ${level} with angle ${currentAngle}`);
-    let lastPoint: MigdrpLogo.Point = { x: 15.799027262255214, y: -0.5989504671700984 };
+    let lastPoint: Point = { x: 15.799027262255214, y: -0.5989504671700984 };
     const fractal = fractalString;
 
     //console.log("fractal: ",fractal);
@@ -185,16 +189,16 @@ export class MigdrpFractal {
     return points;
   }
 
-  private generateExpansionPoints(pathPoints: MigdrpLogo.Point[]) {
-    const subdividedPoints: MigdrpLogo.Point[] = [];
+  private generateExpansionPoints(pathPoints: Point[]) {
+    const subdividedPoints: Point[] = [];
 
     for (let i = 0; i < pathPoints.length - 1; i++) {
-      const middlePoint: MigdrpLogo.Point = { x: 0, y: 0 };
-      const secondPoint: MigdrpLogo.Point = { x: 0, y: 0 };
-      const thirdPoint: MigdrpLogo.Point = { x: 0, y: 0 };
+      const middlePoint: Point = { x: 0, y: 0 };
+      const secondPoint: Point = { x: 0, y: 0 };
+      const thirdPoint: Point = { x: 0, y: 0 };
 
-      const pointA: MigdrpLogo.Point = { x: pathPoints[i].x, y: pathPoints[i].y };
-      const pointB: MigdrpLogo.Point = { x: pathPoints[i + 1].x, y: pathPoints[i + 1].y };
+      const pointA: Point = { x: pathPoints[i].x, y: pathPoints[i].y };
+      const pointB: Point = { x: pathPoints[i + 1].x, y: pathPoints[i + 1].y };
 
       middlePoint.x = (pointA.x + pointB.x) / 2;
       middlePoint.y = (pointA.y + pointB.y) / 2;
@@ -230,7 +234,7 @@ export class MigdrpFractal {
     }
   }
 
-  private newSegmentPoint(angle: number, lenght: number, point: MigdrpLogo.Point) {
+  private newSegmentPoint(angle: number, lenght: number, point: Point) {
     const rads = (angle * Math.PI) / 180;
 
     //console.log(`L:${lenght}, Deg:${angle}, Rad:${rads}`);
@@ -241,7 +245,7 @@ export class MigdrpFractal {
 
     const CO = lenght * senAngle;
     const CA = lenght * consAngle;
-    const newPoint: MigdrpLogo.Point = { x: point.x + CO, y: point.y + CA };
+    const newPoint: Point = { x: point.x + CO, y: point.y + CA };
 
     //console.log(`CO:${CO}, CA:${CA}`);
 

@@ -7,9 +7,6 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 const config: any = {
   mode: 'development',
   devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
   entry: {
     'test-component': ['./test/test-component.ts'],
   },
@@ -34,10 +31,15 @@ const config: any = {
     },
   },
   output: {
-    chunkFilename: '[name].bundle.js',
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+  },
+  devServer: {
+    port:2503,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    }
   },
   plugins: [
     new ProgressPlugin(),

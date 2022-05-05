@@ -1,14 +1,9 @@
-import { MigdrpFractal, Fractals } from './MigdrpFractal';
-
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { MigdrpFractal } from './MigdrpFractal';
 
-export enum LogoVertexState {
-  Reduction = 'reduction',
-  Expansion = 'expansion',
-  Path = 'path',
-}
+
 
 export class MigdrpIcon extends HTMLElement {
   private css(): string {
@@ -65,7 +60,7 @@ export class MigdrpIcon extends HTMLElement {
   }
 
   public Canvas: HTMLCanvasElement = window.document.createElement('canvas');
-  public Fractal: MigdrpFractal = new MigdrpFractal(5, 10, Fractals.Quartet);
+  public Fractal: MigdrpFractal = new MigdrpFractal(5, 10, MigdrpLogo.Fractals.Quartet);
 
   private backgroundCircle: HTMLDivElement = window.document.createElement('div');
 
@@ -186,7 +181,7 @@ export class MigdrpIcon extends HTMLElement {
   }
 
   private createNativeLine(startupLevel: number) {
-    const colorsmaterial = new THREE.LineBasicMaterial({ vertexColors: true, morphTargets: true });
+    const colorsmaterial = new THREE.LineBasicMaterial({ vertexColors: true });
 
     const colors = [];
     const points = [];
@@ -251,8 +246,8 @@ export class MigdrpIcon extends HTMLElement {
     const anim = this.animation;
     const animStep = this.animationStep;
 
-    let oldLevelState: LogoVertexState;
-    let newLevelState: LogoVertexState;
+    let oldLevelState: MigdrpLogo.LogoVertexState;
+    let newLevelState: MigdrpLogo.LogoVertexState;
 
     const oldVertecesReferences = {
       reduction: this.levelReductionVertices[oldAnimLevel],
@@ -273,8 +268,8 @@ export class MigdrpIcon extends HTMLElement {
       let comparator: number[] = [];
       const speed = 0.01 * (20 / newAnimLevel) + speedChanges;
 
-      oldLevelState = LogoVertexState.Expansion;
-      newLevelState = LogoVertexState.Reduction;
+      oldLevelState = MigdrpLogo.LogoVertexState.Expansion;
+      newLevelState = MigdrpLogo.LogoVertexState.Reduction;
 
       //oldDrawCount = drawCountPerLevelForLinesNative[oldAnimLevel][oldLevelState];
       newDrawCount = drawCountPerLevelForLinesNative[newAnimLevel][newLevelState];
@@ -326,8 +321,8 @@ export class MigdrpIcon extends HTMLElement {
     if (anim === 'shrinking') {
       let comparator: number[] = [];
       const speed = 0.01 * (20 / oldAnimLevel) + speedChanges;
-      oldLevelState = LogoVertexState.Reduction;
-      newLevelState = LogoVertexState.Expansion;
+      oldLevelState = MigdrpLogo.LogoVertexState.Reduction;
+      newLevelState = MigdrpLogo.LogoVertexState.Expansion;
 
       //oldDrawCount = drawCountPerLevelForLinesNative[oldAnimLevel][oldLevelState];
       newDrawCount = drawCountPerLevelForLinesNative[newAnimLevel][newLevelState];

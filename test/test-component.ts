@@ -1,6 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { customElement } from '@polymer/decorators';
-import '../../lib/migdrp-logo';
+import '../lib';
 
 @customElement('test-component')
 export class TestComponent extends PolymerElement {

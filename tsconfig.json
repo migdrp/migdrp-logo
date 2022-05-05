@@ -10,9 +10,9 @@
     "target": "es6",
 	  "moduleResolution": "node",
 	  "outDir": "./dist",
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
 	},
-	"include": ["./src/**/*"],
+	"include": ["./src/**/*", "test"],
 	"exclude": ["node_modules"]
 }
 

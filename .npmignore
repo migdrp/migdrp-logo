@@ -2,9 +2,6 @@ src
 test
 node_modules
 dist
-.env
-.env.example
-nodemon.json
 tsconfig.json
-webpack.config.js
-.eslintrc.json
+webpack.dev.build.ts
+webpack.npm.build.ts
